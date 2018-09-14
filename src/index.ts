@@ -3,12 +3,9 @@ import Server from './server';
 const port = normalizePort(process.env.PORT || 3000);
 Server.set('port', port);
 
-
-Server.listen(port);
-// Server.on('error', onError);
-// Server.on('listen', onListening);
-
-console.log(`Server listening on port ${port}`);
+Server.listen(port, function() {
+  console.log(`Server listening on port ${port}`);
+});
 
 function normalizePort(val: number | string): number | string | boolean {
   const port: number = typeof val === 'string' ? parseInt(val, 10) : val;
@@ -21,12 +18,6 @@ function normalizePort(val: number | string): number | string | boolean {
   }
 }
 
-// function onListening(): void {
-//   // const addr = Server.address();
-//   // const bind = typeof addr === 'string' ? `pipe ${addr}` : `port ${addr.port}`;
-//   // console.log(`Listening on ${bind}`);
-//   console.log('x');
-// }
 // import express from 'express';
 // import GraphHTTP from 'express-graphql';
 // import Schema from './schema';

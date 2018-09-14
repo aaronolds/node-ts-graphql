@@ -1,5 +1,5 @@
 import { GraphQLObjectType, GraphQLList, GraphQLString, GraphQLNonNull } from 'graphql';
-import EmployeeType from './types/employee';
+import type from './types/employee';
 
 const Query = new GraphQLObjectType({
   name: 'Query',
@@ -14,7 +14,7 @@ const Query = new GraphQLObjectType({
       resolve: () => 'good night'
     },
     employee: {
-        type: EmployeeType,
+        type: type,
         description: 'The employee object',
         // args: {
         //     key: {type: new GraphQLNonNull(GraphQLString)}
